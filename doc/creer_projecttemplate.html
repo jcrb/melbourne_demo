@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Initialisation</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Initialisation</h1>
+
+<ul>
+<li>Dans RStdio installer projectTemplate</li>
+<li>puis l&#39;activer: library(&ldquo;projectTemplate&rdquo;)</li>
+<li>créer le dossier <strong>melbourne_demo</strong> via l&#39;instruction <em>create.project(&ldquo;melbourne_project&rdquo;)</em>. Le dossier est créé dans le répertoire courant (getwd()) avec tous les sous dossier du projet. Rajouter un autre <em>path</em> si nécessaire.</li>
+<li>Il faut maintenant associer à se dossier un <strong>projet RStudio</strong>, un gestionaire de version <strong>git</strong> et lier ce dernier à <strong>gitHub</strong>.</li>
+</ul>
+
+<h2>Création d&#39;un RStudio Project</h2>
+
+<ul>
+<li>dans le menu <em>project</em> sélectionner <em>create_project</em> puis <em>existing directory</em>.</li>
+<li>avec le sélecteur (browse) sélectionner le dossier <em>melbourne_demo</em> et valider.</li>
+<li>un nouveau projet est créé.</li>
+</ul>
+
+<h2>Création d&#39;un dépot git</h2>
+
+<ul>
+<li>dans le menu <em>project</em> sélectionner <em>create_project</em> puis <em>version control</em> et enfin <em>git</em>.</li>
+<li>un dossier caché <em>.git</em> est créé dans le dosier <em>melbourne_demo</em>.</li>
+</ul>
+
+<h2>Création d&#39;un lien avec gitHub</h2>
+
+<p>Ouvrir gitHub</p>
+
+<ul>
+<li>create a new directory: lui donner le même nom que le dossier déjà créé (ie melbourne_demo)</li>
+<li>une nouvelle page apparait; en bas de la page, se rendre à la rubrique <strong>push an existing directory</strong></li>
+<li>copier les deux instructions qui y figurent:
+
+<ul>
+<li>git remote add origin <a href="https://github.com/jcrb/melbourne_demo.git">https://github.com/jcrb/melbourne_demo.git</a></li>
+<li>git push -u origin master</li>
+</ul></li>
+<li>ouvrir une console et se placer ans le répertoire caché (ctrl+h) ;git: cd melbourne_demo/.git</li>
+<li>y coller les 2 instruction et valider. Le dossier est transféré dans gitHub.</li>
+</ul>
+
+<h2>Finitions</h2>
+
+<ul>
+<li>dans la sous-fenêtre en bas et à droite, sélectionner l&#39;onglet <em>files</em> et le premier fichier de la liste <em>.gitignore</em>. Il contient la liste des dossiers ou fichiers que l&#39;on ne souhaite pas transférer à github à chaque <em>commit</em>. On y trouve par défaut <em>Rproj.user</em>, <em>Rhistory</em> et <em>Rdata</em>.</li>
+<li>on y rajoute (manuellement) <em>data</em>, <em>logs</em> et <em>cache</em>.</li>
+<li>on peut maintenant faire un premier <em>commit</em>.</li>
+</ul>
+
+<h2>Connvertir ce document en <em>PDF</em></h2>
+
+<p>Il est possible de convertir ce document en <strong>.pdf</strong> à l&#39;aide de <strong>pandoc</strong>:</p>
+
+<ol>
+<li>si nécessaire installer le programme de conversion <em>pandoc</em> via synaptic ou sudo apt-get install pandoc.</li>
+<li>exécuter ce fichier via knit HTML qui produit les fichiers <em>.Rmd</em>, <em>.md</em> et <em>.html</em> correspondant. Pandoc sait convertir les fichiers <em>.md</em> en d&#39;autres formats dont <em>.pdf</em></li>
+<li>file&lt;-&ldquo;creer_projecttemplate&rdquo;</li>
+<li>system(paste(&ldquo;pandoc -o &rdquo;, file, &ldquo;.pdf &rdquo;, file, &ldquo;.md&rdquo;, sep=&ldquo;&rdquo;))</li>
+</ol>
+
+<p>On peut automatiser complètement la tache sous forme d&#39;un script <em>R</em>:</p>
+
+<p><strong>rmd2pdf.R</strong></p>
+
+<pre><code>
+## Convert Rmd into pdf
+
+## Set working directory
+setwd(&quot;/media/woobe/SUPPORT/Repo/blenditbayes/2013-08-easy-documentation&quot;)
+
+## Define filename
+FILE &lt;- &quot;report&quot;
+
+## Convert .Rmd into .md
+library(knitr)
+knit2html(paste(FILE, &quot;.Rmd&quot;, sep=&quot;&quot;))
+
+## Convert .md into .pdf
+system(paste(&quot;pandoc -o &quot;, FILE, &quot;.pdf &quot;, FILE, &quot;.md&quot;, sep=&quot;&quot;))
+</code></pre>
+
+</body>
+
+</html>
+

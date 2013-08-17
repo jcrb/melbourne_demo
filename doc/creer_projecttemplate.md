@@ -1,5 +1,7 @@
-Créer un projet avec ProjectTemplate et Github
-========================================================
+% Créer un projet avec ProjectTemplate et Github
+
+# Initialisation
+
 - Dans RStdio installer projectTemplate
 - puis l'activer: library("projectTemplate")
 - créer le dossier **melbourne_demo** via l'instruction *create.project("melbourne_project")*. Le dossier est créé dans le répertoire courant (getwd()) avec tous les sous dossier du projet. Rajouter un autre *path* si nécessaire.
@@ -35,9 +37,30 @@ Finitions
 
 Connvertir ce document en *PDF*
 -------------------------------
-Il est possible de cnvertir ce document en **.pdf** à l'aide de **pandoc**:
+Il est possible de convertir ce document en **.pdf** à l'aide de **pandoc**:
 
 1. si nécessaire installer le programme de conversion *pandoc* via synaptic ou sudo apt-get install pandoc.
 2. exécuter ce fichier via knit HTML qui produit les fichiers *.Rmd*, *.md* et *.html* correspondant. Pandoc sait convertir les fichiers *.md* en d'autres formats dont *.pdf*
 3. file<-"creer_projecttemplate"
 4. system(paste("pandoc -o ", file, ".pdf ", file, ".md", sep=""))
+
+On peut automatiser complètement la tache sous forme d'un script *R*:
+
+**rmd2pdf.R**
+```{}
+
+## Convert Rmd into pdf
+
+## Set working directory
+setwd("/media/woobe/SUPPORT/Repo/blenditbayes/2013-08-easy-documentation")
+
+## Define filename
+FILE <- "report"
+
+## Convert .Rmd into .md
+library(knitr)
+knit2html(paste(FILE, ".Rmd", sep=""))
+
+## Convert .md into .pdf
+system(paste("pandoc -o ", FILE, ".pdf ", FILE, ".md", sep=""))
+```
