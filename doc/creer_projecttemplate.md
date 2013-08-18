@@ -1,4 +1,8 @@
 % Créer un projet avec ProjectTemplate et Github
+% par <Jeanclaude.Bartier@gmail.com>
+% RESURAL
+
+Ce document est placé dans le répertoire **doc** du projet.
 
 # Initialisation
 
@@ -47,7 +51,7 @@ Il est possible de convertir ce document en **.pdf** à l'aide de **pandoc**:
 On peut automatiser complètement la tache sous forme d'un script *R*:
 
 **rmd2pdf.R**
-```{}
+~~~~~~~ { .python .numberLines startFrom="10" }
 
 ## Convert Rmd into pdf
 
@@ -63,4 +67,37 @@ knit2html(paste(FILE, ".Rmd", sep=""))
 
 ## Convert .md into .pdf
 system(paste("pandoc -o ", FILE, ".pdf ", FILE, ".md", sep=""))
-```
+~~~~~~~  
+
+essai de <u>souligné</u> et du `code`  
+
+#### Titre numéroté et avec Id {#premTitre}
+
+#### Titre _stylé_ non numéroté {style="background: #ddf;" -}
+
+Lien vers le [premier](#premTitre) de ces 2 titres
+
+Une ~~portion de texte~~ barrée ! \
+2^10^ vaut 1024 \
+La molécule de l'eau est H~2~O
+
+$a \cdot x^2 + b \cdot x + c = 0 \quad \Longrightarrow \quad
+x = \frac {-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+~~~~~~~ { .python .numberLines startFrom="10" }
+#!/usr/bin/env python3
+from time import localtime
+heure = localtime().tm_hour
+if heure < 17:
+    print("Bonjour !")
+else:
+    print("Bonsoir !")
+~~~~~~~  
+
+Références
+==========
+Création et conversion de documents avec Pandoc
+Jean-Daniel.Bonjour
+http://enacit1.epfl.ch/markdown-pandoc/article-fi-juillet-2013.html
+
+

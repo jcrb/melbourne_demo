@@ -136,11 +136,17 @@ hr {
 
 
 
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 
 
 </head>
 
 <body>
+<p>Ce document est placé dans le répertoire <strong>doc</strong> du projet.</p>
+
 <h1>Initialisation</h1>
 
 <ul>
@@ -205,7 +211,7 @@ hr {
 
 <p><strong>rmd2pdf.R</strong></p>
 
-<pre><code>
+<pre><code class="python numberLines startFrom=&quot;10&quot;">
 ## Convert Rmd into pdf
 
 ## Set working directory
@@ -221,6 +227,36 @@ knit2html(paste(FILE, &quot;.Rmd&quot;, sep=&quot;&quot;))
 ## Convert .md into .pdf
 system(paste(&quot;pandoc -o &quot;, FILE, &quot;.pdf &quot;, FILE, &quot;.md&quot;, sep=&quot;&quot;))
 </code></pre>
+
+<p>essai de <u>souligné</u> et du <code>code</code>  </p>
+
+<h4>Titre numéroté et avec Id {#premTitre}</h4>
+
+<h4>Titre <em>stylé</em> non numéroté {style=&ldquo;background: #ddf;&rdquo; -}</h4>
+
+<p>Lien vers le <a href="#premTitre">premier</a> de ces 2 titres</p>
+
+<p>Une <del>portion de texte</del> barrée ! \
+2<sup>10^</sup> vaut 1024 \
+La molécule de l&#39;eau est H~2~O</p>
+
+<p>\( a \cdot x^2 + b \cdot x + c = 0 \quad \Longrightarrow \quad
+x = \frac {-b \pm \sqrt{b^2 - 4ac}}{2a} \)</p>
+
+<pre><code class="python numberLines startFrom=&quot;10&quot;">#!/usr/bin/env python3
+from time import localtime
+heure = localtime().tm_hour
+if heure &lt; 17:
+    print(&quot;Bonjour !&quot;)
+else:
+    print(&quot;Bonsoir !&quot;)
+</code></pre>
+
+<h1>Références</h1>
+
+<p>Création et conversion de documents avec Pandoc
+Jean-Daniel.Bonjour
+<a href="http://enacit1.epfl.ch/markdown-pandoc/article-fi-juillet-2013.html">http://enacit1.epfl.ch/markdown-pandoc/article-fi-juillet-2013.html</a></p>
 
 </body>
 
